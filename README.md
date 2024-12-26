@@ -16,7 +16,8 @@
        
   # 4、功能说明：
     1、SSH定时登录，并执行进程保活。
-    2、进程内容：哪吒V1面板  /V1探针         [*适配 vfhky 佬安装脚本](https://github.com/vfhky/serv00_ct8_nezha)
+    2、进程内容：哪吒V1面板  /V1探针         2、进程内容：哪吒V1面板  /V1探针         [*适配 vfhky 佬安装脚本](https://github.com/vfhky/serv00_ct8_nezha)
+
                 V0探针                   [  *适配 frankiejun 佬安装脚本   ]https://github.com/frankiejun/serv00-play
                 singbox                  [  *适配 frankiejun 佬安装脚本   ]https://github.com/frankiejun/serv00-play
                 sun-panel                [  *适配 frankiejun 佬安装脚本   ]https://github.com/frankiejun/serv00-play
