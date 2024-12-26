@@ -1,9 +1,9 @@
-  #                                sver00_ct8  青龙面板自动脚本
+  ###                                sver00_ct8  青龙面板自动脚本
   
-  # 1、青龙面板 依赖管理--Linux 创建安装 四个依赖
+  ## 1、青龙面板 依赖管理--Linux 创建安装 四个依赖
        sshpss  /  curl  /  util-linux  /  jq 
        
-  # 2、青龙面板 环境变量 中添加  参数
+  ## 2、青龙面板 环境变量 中添加  参数
       1>  ACCOUNTS                   # 账户信息（必须要）
       2>  WXPUSHER_TOKEN             # WXPUSHER Token（ 2|3为一组，单设无效，非必要 ）
       3>  WXPUSHER_USER_ID           # WXPUSHER 用户ID（ 2|3为一组，单设无效，非必要 ）
@@ -11,10 +11,10 @@
       5>  TG_BOT_TOKEN               # TG_BOT_TOKEN（ 5|6为一组，单设无效，非必要 ）
       6>  TG_CHAT_ID                 #TG_CHAT_ID（5|6为一组，单设无效，非必要）
 
-  # 3、账户信息，ACCOUNTS格式为
+  ## 3、账户信息，ACCOUNTS格式为
        user,password,server1:server2:server3|user1,password1,server4:server5:server6
        
-  # 4、功能说明：
+  ## 4、功能说明：
 1、SSH定时登录，并执行进程保活。
 
 2、进程内容：
@@ -31,7 +31,7 @@
 
 5、多服务器地址自动轮值（需要在变量 ACCOUNTS 中设置），只要IP不全死，总有一个能登录。
 
-  ## 效果图片
+  ## 5、效果展示：
 ![本地图片](images/1.png)
 ![本地图片](images/2.png)
 ![本地图片](images/3.png)
