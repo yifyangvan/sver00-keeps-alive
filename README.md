@@ -1,4 +1,4 @@
-  sver00_ct8  青龙面板自动脚本
+  ##  sver00_ct8  青龙面板自动脚本
   
   ## 1、青龙面板 依赖管理--Linux 创建安装 四个依赖
        sshpss  /  curl  /  util-linux  /  jq 
