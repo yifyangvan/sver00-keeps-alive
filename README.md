@@ -32,8 +32,8 @@
 5、多服务器地址自动轮值（需要在变量 ACCOUNTS 中设置），只要IP不全死，总有一个能登录。
 
   ## 5、效果展示：
-![本地图片](images/1.png)
-![本地图片](images/2.png)
-![本地图片](images/3.png)
+<img src="images/1.png" width="200" />
+<img src="images/2.png" width="200" />
+<img src="images/3.png" width="200" />
 
 
