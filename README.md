@@ -15,13 +15,19 @@
        user,password,server1:server2:server3|user1,password1,server4:server5:server6
        
   # 4、功能说明：
-    1、SSH定时登录，并执行进程保活。
-    2、进程内容：哪吒V1面板  /V1探针        [适配vfhky佬安装脚本](https://github.com/vfhky/serv00_ct8_nezha)
-                V0探针                    [适配frankiejun佬安装脚本](https://github.com/frankiejun/serv00-play)
-                singbox                   [适配frankiejun佬安装脚本](https://github.com/frankiejun/serv00-play)
-                sun-panel                 [适配frankiejun佬安装脚本](https://github.com/frankiejun/serv00-play)
-                webssh                    [适配frankiejun佬安装脚本](https://github.com/frankiejun/serv00-play)
-                alist                     [适配frankiejun佬安装脚本](https://github.com/frankiejun/serv00-play)
-    3、消息通知，显示账号登录情况及进程执行明细，支持 WXPusher / PushPlus / Telegram 推送，可按需设置。
-    4、推送通知敏感信息（账号）遮掩，只显示部分字符。
-    5、多服务器地址自动轮值（需要在变量 ACCOUNTS 中设置），只要IP不全死，总有一个能登录。
+1、SSH定时登录，并执行进程保活。
+
+2、进程内容：
+- 哪吒V1面板 / V1探针        [适配vfhky佬安装脚本](https://github.com/vfhky/serv00_ct8_nezha)
+- V0探针                    [适配frankiejun佬安装脚本](https://github.com/frankiejun/serv00-play)
+- singbox                   [适配frankiejun佬安装脚本](https://github.com/frankiejun/serv00-play)
+- sun-panel                 [适配frankiejun佬安装脚本](https://github.com/frankiejun/serv00-play)
+- webssh                    [适配frankiejun佬安装脚本](https://github.com/frankiejun/serv00-play)
+- alist                     [适配frankiejun佬安装脚本](https://github.com/frankiejun/serv00-play)
+
+3、消息通知，显示账号登录情况及进程执行明细，支持 WXPusher / PushPlus / Telegram 推送，可按需设置。
+
+4、推送通知敏感信息（账号）遮掩，只显示部分字符。
+
+5、多服务器地址自动轮值（需要在变量 ACCOUNTS 中设置），只要IP不全死，总有一个能登录。
+
