@@ -32,6 +32,6 @@
 5、多服务器地址自动轮值（需要在变量 ACCOUNTS 中设置），只要IP不全死，总有一个能登录。
 
   ## 5、效果展示：
-<img src="images/1.png" width="1200" /> 
+![Image Description](https://github.com/ryty1/alist-log/blob/main/github_images/1.png?raw=true)
 
 
