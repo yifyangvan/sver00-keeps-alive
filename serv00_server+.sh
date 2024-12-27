@@ -1,10 +1,10 @@
 #!/bin/bash
-export ACCOUNTS="$ACCOUNTS" 
-WXPUSHER_TOKEN="$WXPUSHER_TOKEN" 
-WXPUSHER_USER_ID="$WXPUSHER_USER_ID" 
-PUSHPLUS_TOKEN="$PUSHPLUS_TOKEN"  
-TG_BOT_TOKEN="$TG_BOT_TOKEN" 
-TG_CHAT_ID="$TG_CHAT_ID" 
+export ACCOUNTS="$ACCOUNTS"
+WXPUSHER_TOKEN="$WXPUSHER_TOKEN"
+PUSHPLUS_TOKEN="$PUSHPLUS_TOKEN"
+WXPUSHER_USER_ID="$WXPUSHER_USER_ID"
+TG_BOT_TOKEN="$TG_BOT_TOKEN"
+TG_CHAT_ID="$TG_CHAT_ID"
 WXPUSHER_URL="https://wxpusher.zjiecode.com/api/send/message"
 PUSHPLUS_URL="http://www.pushplus.plus/send"
 TELEGRAM_URL="https://api.telegram.org/bot$TG_BOT_TOKEN/sendMessage"
@@ -22,7 +22,7 @@ send_wxpusher_message() {
       \"content\": \"$content\",
       \"title\": \"$title\",
       \"uids\": [\"$WXPUSHER_USER_ID\"]
-    }" 
+    }" >/dev/null 2>&1 &
 }
 send_pushplus_message() {
   local title="$1"
@@ -36,7 +36,7 @@ send_pushplus_message() {
       \"token\": \"$PUSHPLUS_TOKEN\",
       \"title\": \"$title\",
       \"content\": \"<pre>$content</pre>\"
-    }"
+    }" >/dev/null 2>&1 &
 }
 send_telegram_message() {
   local title="$1 \n"
@@ -49,7 +49,7 @@ send_telegram_message() {
     -d "{
       \"chat_id\": \"$TG_CHAT_ID\",
       \"text\": \"$title \n $content\"
-    }"
+    }" >/dev/null 2>&1 &
 }
 mask_username() {
   local username="$1"
@@ -67,9 +67,9 @@ echo ""
 for (( i=0; i<${#account_info[@]}; i++ )); do
   USERNAME=$(echo "${account_info[$i]}" | cut -d ',' -f 1)
   PASSWORD=$(echo "${account_info[$i]}" | cut -d ',' -f 2)
-  SERVER_LIST=$(echo "${account_info[$i]}" | cut -d ',' -f 3) 
+  SERVER_LIST=$(echo "${account_info[$i]}" | cut -d ',' -f 3)
   OPERATION_RESULT="❌"
-  IFS=':' read -r -a servers <<< "$SERVER_LIST" 
+  IFS=':' read -r -a servers <<< "$SERVER_LIST"
   for SERVER in "${servers[@]}"; do
     echo "尝试使用 [$USERNAME] 账号 登录 [$SERVER] 服务器  "
     sshpass -p "$PASSWORD" timeout $LOGIN_TIMEOUT ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o LogLevel=QUIET -T "$USERNAME@$SERVER" exit
@@ -80,66 +80,64 @@ for (( i=0; i<${#account_info[@]}; i++ )); do
       MASKED_SERVER=$(mask_server "$SERVER")
       OPERATION_RESULT="✅"  # 登录成功即记录为 ✅
       RESULT_SUMMARY+="✅      $index. $MASKED_USERNAME       【 $MASKED_SERVER 】登录成功\n"
-      sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o LogLevel=QUIET -T "$USERNAME@$SERVER" <<EOF
-        echo "正在重启 面板 进程  "
-        pkill -f "nezha-dashboard" >/dev/null 2>&1 || true
-        if [ -d "/home/$USERNAME/nezha_app/dashboard" ]; then
-          cd /home/$USERNAME/nezha_app/dashboard
-          nohup ./nezha-dashboard >/dev/null 2>&1 &
-          echo "-----------哪吒V1面板 重启成功。"
-        else
-          echo ">>>>>>>>>>>哪吒V1面板 未安装，跳过。"
-        fi
-        echo "正在重启 探针 进程  "
-        pkill -f "nezha-agent" >/dev/null 2>&1 || true
-        if [ -d "/home/$USERNAME/nezha_app/agent" ]; then
-          cd /home/$USERNAME/nezha_app/agent
-          nohup sh nezha-agent.sh >/dev/null 2>&1 &
-          echo "-----------v1探针 重启成功。"
-        else
-          echo ">>>>>>>>>>>v1探针 未安装，跳过。"
-        fi
-        if [ -d "cd /home/$USERNAME/serv00-play/nezha" ]; then
-          cd /home/$USERNAME/nezha_app/agent
-          nohup ./nezha-agent  >/dev/null 2>&1 &
-          echo "-----------v0探针 重启成功。"
-        else
-          echo ">>>>>>>>>>>v0探针 未安装，跳过。"
-        fi
-        echo "正在拉取 singbox 进程  "
-        if [ -d "/home/$USERNAME/serv00-play/singbox" ]; then
-          cd /home/$USERNAME/serv00-play/singbox
-          nohup ./start.sh >/dev/null 2>&1 &
-          echo "-----------singbox 拉取成功。"
-        else
-          echo ">>>>>>>>>>>singbox 未安装，跳过。"
-        fi
-        echo "正在重启 sun-panel 进程  "
-        pkill -f "sun-panel" >/dev/null 2>&1 || true
-        if [ -d "/home/$USERNAME/serv00-play/sunpanel" ]; then
-          cd /home/$USERNAME/serv00-play/sunpanel
-          nohup ./sun-panel >/dev/null 2>&1 &
-          echo "-----------sun-panel 重启成功。"
-        else
-          echo ">>>>>>>>>>>sun-panel 未安装，跳过。"
-        fi
-        echo "正在拉取 webssh 进程  "
-        if [ -d "/home/$USERNAME/serv00-play/webssh" ]; then
-          cd /home/$USERNAME/serv00-play/webssh
-          nohup ./wssh >/dev/null 2>&1 &
-          echo "-----------webssh 拉取成功。"
-        else
-          echo ">>>>>>>>>>>webssh 未安装，跳过。"
-        fi
-        echo "正在重启 alist 进程  "
-        pkill -f "alist server" >/dev/null 2>&1 || true
-        if [ -d "/home/piaoc/serv00-play/alist" ]; then
-          cd /home/piaoc/serv00-play/alist
-          nohup ./alist server >/dev/null 2>&1 &
-          echo "-----------alist 重启成功。"
-        else
-          echo ">>>>>>>>>>>alist 未安装，跳过。"
-        fi
+      sshpass -p "$PASSWORD" timeout $LOGIN_TIMEOUT ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o LogLevel=QUIET -T "$USERNAME@$SERVER" <<EOF
+    echo " "
+    echo "       ✅ 拉取成功          ❌ 没有安装"
+    echo "——————————————————————————————————————————————————"
+if [ -d "/home/$USERNAME/nezha_app/dashboard" ]; then
+    pkill -f "nezha-dashboard" >/dev/null 2>&1 || true
+    cd /home/$USERNAME/nezha_app/dashboard && nohup ./nezha-dashboard >/dev/null 2>&1 & 
+    echo "✅ -------- 哪吒V1面板"
+else
+    echo "❌ -------- 哪吒V1面板"
+fi
+if [ -d "/home/$USERNAME/nezha_app/agent" ]; then
+    pkill -f "nezha-agent" >/dev/null 2>&1 || true
+    cd /home/$USERNAME/nezha_app/agent && nohup sh nezha-agent.sh >/dev/null 2>&1 &
+    echo "✅ -------- V1探针"
+else
+    echo "❌ -------- V1探针"
+fi
+if [ -d "/home/$USERNAME/serv00-play/nezha" ] && [ -f "/home/$USERNAME/serv00-play/nezha/nezha.json" ]; then
+    pkill -f "nezha-agent" >/dev/null 2>&1 || true
+    cd /home/$USERNAME/serv00-play/nezha
+    nohup ./nezha-agent --report-delay 4 --disable-auto-update --disable-force-update \
+        $( [[ "$(jq -r '.tls' nezha.json 2>/dev/null)" == "y" ]] && echo "--tls" ) \
+        -s "$(jq -r '.nezha_domain' nezha.json 2>/dev/null):$(jq -r '.nezha_port' nezha.json 2>/dev/null)" \
+        -p "$(jq -r '.nezha_pwd' nezha.json 2>/dev/null)" >/dev/null 2>&1 &
+    echo "✅ -------- V0探针"
+else
+    echo "❌ -------- V0探针"
+fi
+if [ -d "/home/$USERNAME/serv00-play/singbox" ]; then
+    cd /home/$USERNAME/serv00-play/singbox && nohup ./start.sh >/dev/null 2>&1 &
+    echo "✅ -------- singbox"
+else
+    echo "❌ -------- singbox"
+fi
+if [ -d "/home/$USERNAME/serv00-play/sunpanel" ]; then
+    pkill -f "sun-panel" >/dev/null 2>&1 || true
+    cd /home/$USERNAME/serv00-play/sunpanel && nohup ./sun-panel >/dev/null 2>&1 &
+    echo "✅ -------- sun-panel"
+else
+    echo "❌ -------- sun-panel"
+fi
+if [ -d "/home/$USERNAME/serv00-play/webssh" ] && [ -f "/home/$USERNAME/serv00-play/webssh/config.json" ]; then
+    cd /home/$USERNAME/serv00-play/webssh
+    nohup ./wssh --port=$(jq -r ".port" config.json 2>/dev/null) --fbidhttp=False --xheaders=False --encoding="utf-8" --delay=10 >/dev/null 2>&1 &
+    echo "✅ -------- webssh"
+else
+    echo "❌ -------- webssh"
+fi
+if [ -d "/home/piaoc/serv00-play/alist" ]; then
+    pkill -f "alist server" >/dev/null 2>&1 || true
+    cd /home/piaoc/serv00-play/alist && nohup ./alist server >/dev/null 2>&1 &
+    echo "✅ -------- alist"
+else
+    echo "❌ -------- alist"
+fi
+    echo "——————————————————————————————————————————————————"
+
         ps -A >/dev/null 2>&1
         exit
 EOF
@@ -154,6 +152,7 @@ EOF
       process_list=$(sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o LogLevel=QUIET -T "$USERNAME@$SERVER" "ps -A")
       echo "正在进行进程对比......  "
       PROCESS_DETAILS=""
+
       for process in "${!processes[@]}"; do
         if echo "$process_list" | grep -q "$process"; then
           PROCESS_DETAILS+="    ${processes[$process]} |"
@@ -167,7 +166,8 @@ EOF
       echo "对比结束，已启动进程记录在结果中。  "
       echo "  "
       RESULT_SUMMARY+=" ------ $PROCESS_DETAILS 已启动\n"
-      break
+      
+      break 
     else
       echo "登录失败，尝试下一个服务器..."
     fi
@@ -179,6 +179,6 @@ EOF
   ((index++))
 done
 echo "发送 WXPusher、PushPlus、Telegram 消息推送  "
-send_wxpusher_message "Serv00进程拉取结果" "$RESULT_SUMMARY"
-send_pushplus_message "Serv00进程拉取结果" "$RESULT_SUMMARY"
+send_wxpusher_message "Serv00保活通知" "$RESULT_SUMMARY"
+send_pushplus_message "Serv00保活通知" "$RESULT_SUMMARY"
 send_telegram_message "$RESULT_SUMMARY"
