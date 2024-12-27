@@ -33,7 +33,9 @@
 
   ## 5、效果展示：
 ![Image Description](https://github.com/ryty1/alist-log/blob/main/github_images/1.png?raw=true)
-  ##
+
+  ## 5-1、本地脚本相关设置：
+  
 ![Image Description](https://github.com/ryty1/alist-log/blob/main/github_images/2.png?raw=true)
 
 
