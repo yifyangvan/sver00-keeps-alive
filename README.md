@@ -24,7 +24,7 @@
 2、进程内容：
 | 适配进程         | 哪吒V1面板    +    哪吒V1探针       | V0探针    +    singbox     +   sun-panel   +   webssh     +    alist         |
 |--------------|------------------------------------|--------------------------------------------------------------------------|
-| 适配项目地址         | [vfhky](https://github.com/vfhky/serv00_ct8_nezha)                          | [饭奇骏](https://github.com/frankiejun/serv00-play)                                                                    |               
+| 大佬地址         | [vfhky](https://github.com/vfhky/serv00_ct8_nezha)                          | [饭奇骏](https://github.com/frankiejun/serv00-play)                                                                    |               
 
 3、消息通知，显示账号登录情况及进程执行明细，支持 WXPusher / PushPlus / Telegram 推送，可按需设置。
 
