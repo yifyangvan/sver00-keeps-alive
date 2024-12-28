@@ -22,12 +22,9 @@
 1、SSH定时登录，并执行进程保活。
 
 2、进程内容：
-- 哪吒V1面板 / V1探针    *适配 [vfhky](https://github.com/vfhky/serv00_ct8_nezha) 佬安装脚本
-- V0探针               *适配 [饭奇骏](https://github.com/frankiejun/serv00-play) 佬脚本,下面都是
-- singbox                   
-- sun-panel                 
-- webssh                    
-- alist                     
+| 适配进程         | 哪吒V1面板    +    哪吒V1探针       | V0探针    +    singbox     +   sun-panel   +   webssh     +    alist         |
+|--------------|------------------------------------|--------------------------------------------------------------------------|
+| 适配项目地址         | [vfhky](https://github.com/vfhky/serv00_ct8_nezha)                          | [饭奇骏](https://github.com/frankiejun/serv00-play)                                                                    |               
 
 3、消息通知，显示账号登录情况及进程执行明细，支持 WXPusher / PushPlus / Telegram 推送，可按需设置。
 
@@ -42,8 +39,5 @@
   
 ![Image Description](https://github.com/ryty1/alist-log/blob/main/github_images/2.png?raw=true)
 
-  ## 表格
-| 进程         | 哪吒V1面板    +    哪吒V1探针       | V0探针    +    singbox     +   sun-panel   +   webssh     +    alist         |
-|--------------|------------------------------------|--------------------------------------------------------------------------|
-| 适配         | [vfhky](https://github.com/vfhky/serv00_ct8_nezha)                          | [饭奇骏](https://github.com/frankiejun/serv00-play)                                                                    |
+
 
