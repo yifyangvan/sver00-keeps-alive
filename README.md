@@ -38,4 +38,13 @@
   
 ![Image Description](https://github.com/ryty1/alist-log/blob/main/github_images/2.png?raw=true)
 
-
+  ## 表格
+|     进程      |         适配           |
+|--------------|------------------------|
+| 哪吒V1面板     |       [vfhky](https://github.com/vfhky/serv00_ct8_nezha)|
+| 哪吒V1探针     |       同上            |
+| V0探针        |       [饭奇骏](https://github.com/frankiejun/serv00-play)|
+| singbox       |       同上            |
+| sun-panel     |       同上            |
+| webssh        |       同上            |
+| alist         |       同上            |
