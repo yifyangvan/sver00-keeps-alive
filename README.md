@@ -18,12 +18,12 @@
 1、SSH定时登录，并执行进程保活。
 
 2、进程内容：
-- 哪吒V1面板 / V1探针        [适配vfhky佬安装脚本](https://github.com/vfhky/serv00_ct8_nezha)
-- V0探针                    [适配frankiejun佬安装脚本](https://github.com/frankiejun/serv00-play)
-- singbox                   [适配frankiejun佬安装脚本](https://github.com/frankiejun/serv00-play)
-- sun-panel                 [适配frankiejun佬安装脚本](https://github.com/frankiejun/serv00-play)
-- webssh                    [适配frankiejun佬安装脚本](https://github.com/frankiejun/serv00-play)
-- alist                     [适配frankiejun佬安装脚本](https://github.com/frankiejun/serv00-play)
+- 哪吒V1面板 / V1探针        [适配 vfhky 佬安装脚本](https://github.com/vfhky/serv00_ct8_nezha)
+- V0探针                    [包含下面4个都是适配 frankiejun 佬安装脚本](https://github.com/frankiejun/serv00-play)
+- singbox                   
+- sun-panel                 
+- webssh                    
+- alist                     
 
 3、消息通知，显示账号登录情况及进程执行明细，支持 WXPusher / PushPlus / Telegram 推送，可按需设置。
 
