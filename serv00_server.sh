@@ -88,12 +88,12 @@ if [ -d "/home/$USERNAME/serv00-play/nezha" ] && [ -f "/home/$USERNAME/serv00-pl
     echo "✅ -------- V0探针"
 fi
 if [ -d "/home/$USERNAME/serv00-play/singbox" ]; then
-    cd /home/$USERNAME/serv00-play/singbox && nohup ./start.sh --delay=2 >/dev/null 2>&1 &
+    cd /home/$USERNAME/serv00-play/singbox && nohup ./start.sh >/dev/null 2>&1 &
     echo "✅ -------- singbox"
 fi
 if [ -d "/home/$USERNAME/serv00-play/sunpanel" ]; then
     pkill -f "sun-panel" >/dev/null 2>&1 || true
-    cd /home/$USERNAME/serv00-play/sunpanel && nohup ./sun-panel --delay=2 >/dev/null 2>&1 &
+    cd /home/$USERNAME/serv00-play/sunpanel && nohup ./sun-panel >/dev/null 2>&1 &
     echo "✅ -------- sun-panel"
 fi
 if [ -d "/home/$USERNAME/serv00-play/webssh" ] && [ -f "/home/$USERNAME/serv00-play/webssh/config.json" ]; then
