@@ -43,7 +43,7 @@
 ![Image Description](https://github.com/ryty1/alist-log/blob/main/github_images/2.png?raw=true)
 
   ## 表格
-| 进程         | 哪吒V1面板        哪吒V1探针       | V0探针        singbox        sun-panel      webssh         alist         |
+| 进程         | 哪吒V1面板    +    哪吒V1探针       | V0探针    +    singbox     +   sun-panel   +   webssh     +    alist         |
 |--------------|------------------------------------|--------------------------------------------------------------------------|
 | 适配         | [vfhky](https://github.com/vfhky/serv00_ct8_nezha)                          | [饭奇骏](https://github.com/frankiejun/serv00-play)                                                                    |
 
