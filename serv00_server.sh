@@ -81,7 +81,7 @@ fi
 if [ -d "/home/$USERNAME/serv00-play/nezha" ] && [ -f "/home/$USERNAME/serv00-play/nezha/nezha.json" ]; then
     pkill -f "nezha-agent" >/dev/null 2>&1 || true
     cd /home/$USERNAME/serv00-play/nezha
-    nohup ./nezha-agent --report-delay 4 --disable-auto-update --disable-force-update --delay=2 \
+    nohup ./nezha-agent --report-delay 4 --disable-auto-update --disable-force-update \
         $( [[ "$(jq -r '.tls' nezha.json 2>/dev/null)" == "y" ]] && echo "--tls" ) \
         -s "$(jq -r '.nezha_domain' nezha.json 2>/dev/null):$(jq -r '.nezha_port' nezha.json 2>/dev/null)" \
         -p "$(jq -r '.nezha_pwd' nezha.json 2>/dev/null)" >/dev/null 2>&1 &
