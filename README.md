@@ -18,8 +18,8 @@
 1、SSH定时登录，并执行进程保活。
 
 2、进程内容：
-- 哪吒V1面板 / V1探针        [适配 vfhky 佬安装脚本](https://github.com/vfhky/serv00_ct8_nezha)
-- V0探针                   [适配 饭奇骏 佬脚本,下面都是](https://github.com/frankiejun/serv00-play)
+- 哪吒V1面板 / V1探针    *适配 [vfhky](https://github.com/vfhky/serv00_ct8_nezha) 佬安装脚本
+- V0探针               *适配 [饭奇骏](https://github.com/frankiejun/serv00-play) 佬脚本,下面都是
 - singbox                   
 - sun-panel                 
 - webssh                    
