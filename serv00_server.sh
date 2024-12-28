@@ -98,7 +98,7 @@ if [ -d "/home/$USERNAME/serv00-play/sunpanel" ]; then
 fi
 if [ -d "/home/$USERNAME/serv00-play/webssh" ] && [ -f "/home/$USERNAME/serv00-play/webssh/config.json" ]; then
     cd /home/$USERNAME/serv00-play/webssh
-    nohup ./wssh --port=$(jq -r ".port" config.json 2>/dev/null) --fbidhttp=False --xheaders=False --encoding="utf-8" --delay=5 >/dev/null 2>&1 &
+    nohup ./wssh --port=$(jq -r ".port" config.json 2>/dev/null) >/dev/null 2>&1 &
     echo "✅ -------- webssh"
 fi
 if [ -d "/home/piaoc/serv00-play/alist" ]; then
