@@ -19,7 +19,7 @@
 
 2、进程内容：
 - 哪吒V1面板 / V1探针        [适配 vfhky 佬安装脚本](https://github.com/vfhky/serv00_ct8_nezha)
-- V0探针                   [适配 饭奇骏 佬脚本,以都是](https://github.com/frankiejun/serv00-play)
+- V0探针                   [适配 饭奇骏 佬脚本,下面都是](https://github.com/frankiejun/serv00-play)
 - singbox                   
 - sun-panel                 
 - webssh                    
