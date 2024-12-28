@@ -103,7 +103,7 @@ if [ -d "/home/$USERNAME/serv00-play/webssh" ] && [ -f "/home/$USERNAME/serv00-p
 fi
 if [ -d "/home/piaoc/serv00-play/alist" ]; then
     pkill -f "alist server" >/dev/null 2>&1 || true
-    cd /home/piaoc/serv00-play/alist && nohup ./alist server --delay=5 >/dev/null 2>&1 &
+    cd /home/piaoc/serv00-play/alist && nohup ./alist server >/dev/null 2>&1 &
     echo "✅ -------- alist"
 fi
     echo "——————————————————————————————————————————————————"
