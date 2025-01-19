@@ -20,7 +20,7 @@
 
   ## 5、浏览器访问  https://域名/info ，如图
         例如：https://fuhuo.serv00.net/info
-![Image Description](https://github.com/ryty1/alist-log/blob/main/github_images/2.png?raw=true)
+![Image Description](https://github.com/ryty1/alist-log/blob/main/github_images/3.png?raw=true)
 
   ## 6、自己可以杀掉进程再刷新网页，然后再SSH端 ps aux 查询进程
   
