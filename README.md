@@ -1,13 +1,10 @@
-  ##  sver00
+  ##  声明：非原创，全靠添义父（https://t.me/fjanenw）的打赏。
   
   ## 1、登录面板删除自带的域名，然后新建一个项目（也可以不删除直接新创建）。
 ![Image Description](https://github.com/ryty1/alist-log/blob/main/github_images/1.png?raw=true)
        
   ## 2、登录SSH客户端安装依赖
       npm install dotenv basic-auth express
-  
-![Image Description](https://github.com/ryty1/alist-log/blob/main/github_images/2.png?raw=true)
-
 
   ## 3、进入域名目录
        cd ~/domains/域名/public_nodejs
@@ -24,7 +21,4 @@
 
   ## 6、自己可以杀掉进程再刷新网页，然后再SSH端 ps aux 查询进程
   
-
-
-
-
+  ## 7、进程项目可以自己DIY，默认只有饭奇骏的 singbox 进程
