@@ -4,7 +4,7 @@
 ![Image Description](https://github.com/ryty1/alist-log/blob/main/github_images/1.png?raw=true)
        
   ## 2、登录SSH客户端安装依赖
-  npm install dotenv basic-auth express
+      npm install dotenv basic-auth express
   
 ![Image Description](https://github.com/ryty1/alist-log/blob/main/github_images/2.png?raw=true)
 
@@ -15,7 +15,7 @@
   ## 4、创建JS文件，复制本项目里的app.js内容粘贴进去
         nano app.js
 
-       Ctrl+S保存，然后Ctrl+X退出
+ Ctrl+S保存，然后Ctrl+X退出
 
 
   ## 5、浏览器访问  https://域名/info ，如图
