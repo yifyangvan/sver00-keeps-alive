@@ -1,4 +1,4 @@
-  ##  声明：非原创，全靠添义父的打赏。[https://t.me/fjanenw]
+  ##  声明：非原创，本人小白，没有这个实力，全靠添义父的打赏。感谢义父 [https://t.me/fjanenw] 
   
   ## 1、登录面板删除自带的域名，然后新建一个项目（也可以不删除直接新创建）。
 ![Image Description](https://github.com/ryty1/alist-log/blob/main/github_images/1.png?raw=true)
@@ -14,11 +14,10 @@
 
  Ctrl+S保存，然后Ctrl+X退出
 
-
-  ## 5、浏览器访问  https://域名/info ，如图
+  ## 5、浏览器访问  https://域名/info ，如图（如打不开可能需要挂代理）
         例如：https://fuhuo.serv00.net/info
 ![Image Description](https://github.com/ryty1/alist-log/blob/main/github_images/3.png?raw=true)
 
   ## 6、自己可以杀掉进程再刷新网页，然后再SSH端 ps aux 查询进程
   
-  ## 7、进程项目可以自己DIY，默认只有饭奇骏的 singbox 进程
+  ## 7、进程项目可以自己DIY，默认只有饭奇骏的 singbox 进程，至于集中自动化管理需要自己开发。
