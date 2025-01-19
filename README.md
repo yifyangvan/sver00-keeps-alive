@@ -5,6 +5,7 @@
        
   ## 2、登录SSH客户端安装依赖
   npm install dotenv basic-auth express
+  
 ![Image Description](https://github.com/ryty1/alist-log/blob/main/github_images/2.png?raw=true)
 
 
