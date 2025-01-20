@@ -1,4 +1,4 @@
-  ##  声明：非原创，本人小白，没有这个实力，全靠添义父的打赏。感谢义父 [https://t.me/fjanenw] 
+  ##  声明：非原创，本人小白，没有这个实力，全靠添义父的打赏。感谢 [义父](https://t.me/fjanenw) 
   
   ## 1、登录面板删除自带的域名，然后新建一个项目（也可以不删除直接新创建）。
 ![Image Description](https://github.com/ryty1/alist-log/blob/main/github_images/1.png?raw=true)
