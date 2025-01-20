@@ -4,6 +4,7 @@
 ![Image Description](https://github.com/ryty1/alist-log/blob/main/github_images/1.png?raw=true)
        
   ## 2、登录SSH客户端安装依赖
+      cd ~/domains/域名
       npm install dotenv basic-auth express
 
   ## 3、进入域名目录
