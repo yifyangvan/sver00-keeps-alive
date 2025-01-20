@@ -1,6 +1,6 @@
   ##  声明：非原创，本人小白，没有这个实力，全靠添义父的打赏。感谢 [义父](https://t.me/fjanenw) 
 
-  ##  说明：本项目为 网页保进程，和所谓的 “账号保活” 没有关系，实现的目标是通过打开进入网页vps本地自动执行命令，启动进程，不需要登录SSH的任何操作。
+  ##  说明：本项目为 网页保进程，和所谓的 “账号保活” 没有关系，实现的目标是当官方杀进程或删crontab后，只需通过打开进入网页，vps本地自动执行命令，启动进程，不需要登录SSH的任何操作。
   
   ## 1、[ 登录面板 ](https://panel.serv00.com) 删除自带的域名，然后新建一个项目（也可以不删除直接新创建）。
 ![Image Description](https://github.com/ryty1/alist-log/blob/main/github_images/1.png?raw=true)
