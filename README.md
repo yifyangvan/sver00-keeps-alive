@@ -15,7 +15,7 @@
 
  Ctrl+S保存，然后Ctrl+X退出
 
-  ## 5、浏览器访问  https://域名/info ，如图（如打不开可能需要挂代理）
+  ## 5、浏览器访问域名，如图（如打不开可能需要挂代理）
         例如：https://fuhuo.serv00.net/info
 ![Image Description](https://github.com/ryty1/alist-log/blob/main/github_images/3.png?raw=true)
 
