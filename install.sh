@@ -15,8 +15,14 @@ CHECK_USER() {
     fi
 }
 DEL_DOMAIN() {
-    devil www del "$B2"  > /dev/null 2>&1
+devil www del "$B2"  > /dev/null 2>&1
+if [[ $? -eq 0 ]]; then
     echo " [OK] 默认域名 已删除。"
+    echo ""
+else
+    echo "默认域名删除失败，可能不存在。"
+    echo ""
+fi
 if [[ -d "$E5" ]]; then
     rm -rf "$E5"
 fi
