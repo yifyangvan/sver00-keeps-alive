@@ -16,16 +16,16 @@ CHECK_USER() {
 }
 DEL_DOMAIN() {
 devil www del "$B2"
-if [[ $? -eq 0 ]]; then
-    echo " [OK] 默认域名 已删除。"
-    echo ""
-else
-    echo "默认域名删除失败，可能不存在。"
-    echo ""
-fi
-if [[ -d "$E5" ]]; then
-    rm -rf "$E5"
-fi
+    if [[ $? -eq 0 ]]; then
+        echo " [OK] 默认域名 已删除。"
+        echo ""
+    else
+        echo "默认域名删除失败，可能不存在。"
+        echo ""
+    fi
+    if [[ -d "$E5" ]]; then
+        rm -rf "$E5"
+    fi
 }
 ADD_DOMAIN() {
     if devil www add "$B2" nodejs /usr/local/bin/node22 > /dev/null 2>&1; then
@@ -36,7 +36,7 @@ ADD_DOMAIN() {
     fi
     if [[ ! -d "$F6" ]]; then
     mkdir -p "$F6"
-fi
+    fi
 }
 INSTALL_DEPS() {
     if npm install dotenv basic-auth express > /dev/null 2>&1; then
