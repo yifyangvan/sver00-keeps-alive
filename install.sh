@@ -8,7 +8,7 @@ D4="/home/$A1/domains"
 E5="$D4/$B2"
 F6="$E5/public_nodejs"
 G7="$F6/app.js"
-H8="https://raw.githubusercontent.com/ryty1/htmlalive/main/app.js"
+H8="https://raw.githubusercontent.com/ryty1/sver00-save-me/refs/heads/main/app.js"
 
 # Base64 编码部分内容
 ENCODED_LOGIC="aWYgZGV2aWwgOnd3dyBkZWwgIiRDMiIgPi9kZXYvbnVsbCAyPiYxOyB0aGVuIGVjaG8gIlsgT0sgXSBkZWxldGVkLiI7IGVsc2UgZWNobyAiIGZhaWxlZCBkZWwgYXN1bS4iOyBmaQ==" # 编码片段
