@@ -15,9 +15,9 @@ L1="https://raw.githubusercontent.com/ryty1/sver00-save-me/refs/heads/main/app.j
 echo " ———————————————————————————————————————————————————————————— "
 devil www del "$D1" > /dev/null 2>&1
 if [[ $? -eq 0 ]]; then
-    echo " [OK] 已成功删除默认域名。"
+    echo " [OK] 默认域名 已删除 "
 else
-    echo "删除默认域名失败，可能不存在。"
+    echo "默认域名 删除失败 "
 fi
 
 if [[ -d "$D2" ]]; then
@@ -25,7 +25,7 @@ if [[ -d "$D2" ]]; then
 fi
 
 if devil www add "$D1" nodejs /usr/local/bin/node22 > /dev/null 2>&1; then
-    echo " [OK] Nodejs 域名已成功生成。"
+    echo " [OK] Nodejs 类型域名 创建成功。"
 else
     echo "域名生成失败，请检查环境设置。"
     exit 1
@@ -36,14 +36,15 @@ if [[ ! -d "$N1" ]]; then
 fi
 
 if npm install dotenv basic-auth express > /dev/null 2>&1; then
-    echo " [OK] 所有依赖已成功安装！"
+    echo " [OK] 环境依赖 安装成功
+    "
 else
     echo "依赖安装失败，请检查 Node.js 环境。"
     exit 1
 fi
 
 if curl -s -o "$F1" "$L1"; then
-    echo " [OK] 配置文件已成功下载。"
+    echo " [OK] 配置文件 下载成功 "
 else
     echo "配置文件下载失败，请检查 URL。"
     exit 1
