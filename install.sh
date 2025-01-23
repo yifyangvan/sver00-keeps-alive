@@ -1,97 +1,73 @@
 #!/bin/bash
-A1=$(whoami)
-B2="$A1.serv00.net"
-C3=3000
-D4="/home/$A1/domains"
-E5="$D4/$B2"
-F6="$E5/public_nodejs"
-G7="$F6/app.js"
-H8="https://raw.githubusercontent.com/ryty1/sver00-save-me/refs/heads/main/app.js"
-ENCODED_LOGIC=$(echo -n 'if devil www list | grep -q "$B2"; then if devil www del "$B2" > /dev/null 2>&1; then echo "[OK] deleted."; else echo "failed del asum."; fi; else echo "failed del asum. (域名不存在)"; fi' | base64)
+U1=$(whoami)
+if [[ -z "$U1" ]]; then
+    echo "未能获取当前用户名，退出。"
+    exit 1
+fi
+D1="$U1.serv00.net"
+P1=3000
+R1="/home/$U1/domains"
+D2="$R1/$D1"
+N1="$D2/public_nodejs"
+F1="$N1/app.js"
+L1="https://raw.githubusercontent.com/ryty1/sver00-save-me/refs/heads/main/app.js"
 
-CHECK_USER() {
-    if [[ -z "$A1" ]]; then
-        echo "无法获取当前系统用户名，脚本退出。"
-        exit 1
-    fi
-}
+echo " ———————————————————————————————————————————————————————————— "
+devil www del "$D1" > /dev/null 2>&1
+if [[ $? -eq 0 ]]; then
+    echo " [OK] 已成功删除默认域名。"
+    echo ""
+else
+    echo "删除默认域名失败，可能不存在。"
+    echo ""
+fi
 
-DEL_DOMAIN() {
-    if devil www list | grep -q "$B2"; then
-        if devil www del "$B2" > /dev/null 2>&1; then
-            echo " [OK] 默认域名 已删除。"
-        else
-            echo "默认域名删除失败，可能不存在。"
-        fi
-    else
-        echo "默认域名不存在，无需删除。"
-    fi
-    if [[ -d "$E5" ]]; then
-        rm -rf "$E5"
-    fi
-}
+if [[ -d "$D2" ]]; then
+    rm -rf "$D2"
+fi
 
-ADD_DOMAIN() {
-    if devil www add "$B2" nodejs /usr/local/bin/node22 > /dev/null 2>&1; then
-        echo " [OK] Nodejs 指向域名 已生成。"
-    else
-        echo "新域名生成失败，请检查环境配置。"
-        exit 1
-    fi
-    if [[ ! -d "$F6" ]]; then
-        mkdir -p "$F6"
-    fi
-}
-
-INSTALL_DEPS() {
-    if npm install dotenv basic-auth express > /dev/null 2>&1; then
-        echo " [OK] 依赖安装 成功！"
-    else
-        echo "依赖安装失败，请检查 Node.js 环境。"
-        exit 1
-    fi
-}
-
-DOWNLOAD_SCRIPT() {
-    if curl -s -o "$G7" "$H8"; then
-        echo " [OK] 配置文件 下载成功"
-    else
-        echo "配置文件 下载失败，请检查下载地址。"
-        exit 1
-    fi
-}
-
-SET_PERMISSION() {
-    chmod 644 "$G7"
-    if [[ $? -ne 0 ]]; then
-        echo "文件权限设置失败"
-        exit 1
-    fi
-}
-
-DECODE_EXEC() {
-    echo "$ENCODED_LOGIC" | base64 -d | bash
-}
-
-# 确保 devil 命令可用
-which devil > /dev/null 2>&1
-if [[ $? -ne 0 ]]; then
-    echo "错误：devil 命令未安装或未配置在 PATH 中。"
+if devil www add "$D1" nodejs /usr/local/bin/node22 > /dev/null 2>&1; then
+    echo " [OK] Nodejs 域名已成功生成。"
+    echo ""
+else
+    echo "域名生成失败，请检查环境设置。"
+    echo ""
     exit 1
 fi
 
-# 执行脚本逻辑
-DECODE_EXEC
-CHECK_USER
-DEL_DOMAIN
-ADD_DOMAIN
-INSTALL_DEPS
-DOWNLOAD_SCRIPT
-SET_PERMISSION
+if [[ ! -d "$N1" ]]; then
+    mkdir -p "$N1"
+fi
+
+if npm install dotenv basic-auth express > /dev/null 2>&1; then
+    echo " [OK] 所有依赖已成功安装！"
+    echo ""
+else
+    echo "依赖安装失败，请检查 Node.js 环境。"
+    exit 1
+fi
+
+if curl -s -o "$F1" "$L1"; then
+    echo " [OK] 配置文件已成功下载。"
+else
+    echo "配置文件下载失败，请检查 URL。"
+    exit 1
+fi
+
+chmod 644 "$F1"
+if [[ $? -ne 0 ]]; then
+    echo ""
+    else
+    echo "文件权限更改失败，退出。"
+    exit 1
+fi
 
 echo " 【 恭 喜 】： 网 页 保 活 一 键 部 署 已 完 成  "
 echo " ———————————————————————————————————————————————————————————— "
-echo " |**保活网页 https://$B2/info "
-echo " |**查看节点 https://$B2/node_info "
-echo " |**输出日志 https://$B2/keepalive "
+echo " |**保活网页 https://$D1/info "
+echo ""
+echo " |**查看节点 https://$D1/node_info "
+echo ""
+echo " |**输出日志 https://$D1/keepalive "
 echo " ———————————————————————————————————————————————————————————— "
+echo ""
