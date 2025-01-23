@@ -14,6 +14,13 @@ CHECK_USER() {
         exit 1
     fi
 }
+DEL_DOMAIN() {
+    if devil www del "$B2" > /dev/null 2>&1; then
+        echo " [OK] Nodejs 指向域名 已生成。"
+    else
+        echo "新域名生成失败，请检查环境配置。"
+        exit 1
+    fi
 ADD_DOMAIN() {
     if devil www add "$B2" nodejs /usr/local/bin/node22 > /dev/null 2>&1; then
         echo " [OK] Nodejs 指向域名 已生成。"
