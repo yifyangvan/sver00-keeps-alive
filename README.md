@@ -3,7 +3,9 @@
   ##  说明：本项目为 网页保进程，和所谓的 “账号保活” 没有关系，实现的目标是当官方杀进程或删crontab后，只需通过打开进入网页，vps本地自动执行命令，启动进程，不需要登录SSH的任何操作。
   
   ##  懒人一键自动安装（不需要登陆面板），如失败可尝试下面的手动安装。配置文件感谢群友 [@guitar295](https://t.me/guitar295) 贡献调整。
-      bash <(curl -Ls https://raw.githubusercontent.com/ryty1/htmlalive/refs/heads/main/install.sh)
+      bash <(curl -Ls https://raw.githubusercontent.com/ryty1/sver00-save-me/refs/heads/main/install.sh)
+
+![Image Description](https://github.com/ryty1/alist-log/blob/main/github_images/1.png?raw=true)
 
   ### 手动安装方法：
   ## 1、[ 登录面板 ](https://panel.serv00.com) 删除自带的域名，然后新建一个项目（也可以不删除直接新创建）。
