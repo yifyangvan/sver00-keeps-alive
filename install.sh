@@ -16,10 +16,8 @@ echo " ————————————————————————�
 devil www del "$D1" > /dev/null 2>&1
 if [[ $? -eq 0 ]]; then
     echo " [OK] 已成功删除默认域名。"
-    echo ""
 else
     echo "删除默认域名失败，可能不存在。"
-    echo ""
 fi
 
 if [[ -d "$D2" ]]; then
@@ -28,10 +26,8 @@ fi
 
 if devil www add "$D1" nodejs /usr/local/bin/node22 > /dev/null 2>&1; then
     echo " [OK] Nodejs 域名已成功生成。"
-    echo ""
 else
     echo "域名生成失败，请检查环境设置。"
-    echo ""
     exit 1
 fi
 
@@ -41,7 +37,6 @@ fi
 
 if npm install dotenv basic-auth express > /dev/null 2>&1; then
     echo " [OK] 所有依赖已成功安装！"
-    echo ""
 else
     echo "依赖安装失败，请检查 Node.js 环境。"
     exit 1
