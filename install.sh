@@ -15,7 +15,7 @@ echo " ————————————————————————�
 echo ""
 devil www del "$D1" > /dev/null 2>&1
 if [[ $? -eq 0 ]]; then
-    echo " [OK] 默认域名 已删除 "
+    echo " [OK] 默认域名 删除成功 "
 else
     echo "默认域名 删除失败 "
 fi
@@ -25,7 +25,7 @@ if [[ -d "$D2" ]]; then
 fi
 
 if devil www add "$D1" nodejs /usr/local/bin/node22 > /dev/null 2>&1; then
-    echo " [OK] Nodejs 类型域名 创建成功。"
+    echo " [OK] 类型域名 创建成功 "
 else
     echo "域名生成失败，请检查环境设置。"
     exit 1
