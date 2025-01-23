@@ -4,6 +4,7 @@ if [[ -z "$U1" ]]; then
     echo "未能获取当前用户名，退出。"
     exit 1
 fi
+echo ""
 D1="$U1.serv00.net"
 P1=3000
 R1="/home/$U1/domains"
@@ -12,7 +13,6 @@ N1="$D2/public_nodejs"
 F1="$N1/app.js"
 L1="https://raw.githubusercontent.com/ryty1/sver00-save-me/refs/heads/main/app.js"
 echo " ———————————————————————————————————————————————————————————— "
-echo ""
 devil www del "$D1" > /dev/null 2>&1
 if [[ $? -eq 0 ]]; then
     echo " [OK] 默认域名 删除成功 "
@@ -44,12 +44,12 @@ fi
 
 if curl -s -o "$F1" "$L1"; then
     echo " [OK] 配置文件 下载成功 "
-    echo ""
 else
     echo "配置文件下载失败，请检查 URL。"
     exit 1
 fi
 echo " ———————————————————————————————————————————————————————————— "
+echo ""
 echo " 【 恭 喜 】： 网 页 保 活 一 键 部 署 已 完 成  "
 echo " ———————————————————————————————————————————————————————————— "
 echo " |**保活网页 https://$D1/info "
