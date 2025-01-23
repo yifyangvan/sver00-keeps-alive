@@ -55,10 +55,10 @@ else
 fi
 
 chmod 644 "$F1"
-if [[ $? -ne 0 ]]; then
+if [[ $? -eq 0 ]]; then
     echo ""
-    else
-    echo "文件权限更改失败，退出。"
+else
+    echo "文件权限设置失败"
     exit 1
 fi
 
