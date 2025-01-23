@@ -21,7 +21,6 @@ devil www del "$B2"
         echo ""
     else
         echo "默认域名删除失败，可能不存在。"
-        echo ""
     fi
     if [[ -d "$E5" ]]; then
         rm -rf "$E5"
@@ -30,6 +29,7 @@ devil www del "$B2"
 ADD_DOMAIN() {
     if devil www add "$B2" nodejs /usr/local/bin/node22 > /dev/null 2>&1; then
         echo " [OK] Nodejs 指向域名 已生成。"
+        echo ""
     else
         echo "新域名生成失败，请检查环境配置。"
         exit 1
@@ -41,6 +41,7 @@ ADD_DOMAIN() {
 INSTALL_DEPS() {
     if npm install dotenv basic-auth express > /dev/null 2>&1; then
         echo " [OK] 依赖安装 成功！"
+        echo ""
     else
         echo "依赖安装失败，请检查 Node.js 环境。"
         exit 1
@@ -49,6 +50,7 @@ INSTALL_DEPS() {
 DOWNLOAD_SCRIPT() {
     if curl -s -o "$G7" "$H8"; then
         echo " [OK] 配置文件 下载成功"
+        echo ""
     else
         echo "配置文件 下载失败，请检查下载地址。"
         exit 1
@@ -76,6 +78,9 @@ SET_PERMISSION
 echo " 【 恭 喜 】： 网 页 保 活 一 键 部 署 已 完 成  "
 echo " ———————————————————————————————————————————————————————————— "
 echo " |**保活网页 https://$B2/info "
+echo ""
 echo " |**查看节点 https://$B2/node_info "
+echo ""
 echo " |**输出日志 https://$B2/keepalive "
 echo " ———————————————————————————————————————————————————————————— "
+echo ""
