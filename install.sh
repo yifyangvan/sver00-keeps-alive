@@ -15,7 +15,7 @@ CHECK_USER() {
     fi
 }
 DEL_DOMAIN() {
-devil www del "$B2"
+devil www del "$B2" > /dev/null 2>&1
     if [[ $? -eq 0 ]]; then
         echo " [OK] 默认域名 已删除。"
         echo ""
@@ -50,7 +50,6 @@ INSTALL_DEPS() {
 DOWNLOAD_SCRIPT() {
     if curl -s -o "$G7" "$H8"; then
         echo " [OK] 配置文件 下载成功"
-        echo ""
     else
         echo "配置文件 下载失败，请检查下载地址。"
         exit 1
