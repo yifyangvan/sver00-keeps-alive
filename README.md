@@ -1,8 +1,8 @@
-  ##  声明：非原创，本人小白，没有这个实力，全靠添义父的打赏。感谢 [义父](https://t.me/fjanenw) 
+  ##  声明：非原创，本人小白，没有这个实力，全靠添义父的打赏。感谢 [@fjanenw](https://t.me/fjanenw) 
 
   ##  说明：本项目为 网页保进程，和所谓的 “账号保活” 没有关系，实现的目标是当官方杀进程或删crontab后，只需通过打开进入网页，vps本地自动执行命令，启动进程，不需要登录SSH的任何操作。
   
-  ##  懒人一键自动安装（不需要登陆面板），如失败可尝试下面的手动安装。
+  ##  懒人一键自动安装（不需要登陆面板），如失败可尝试下面的手动安装。配置文件感谢群友 [@guitar295](https://t.me/guitar295)贡献调整。
       bash <(curl -Ls https://raw.githubusercontent.com/ryty1/htmlalive/refs/heads/main/install.sh)
 
   ### 手动安装方法：
