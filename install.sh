@@ -1,6 +1,4 @@
 #!/bin/bash
-
-# 随机变量和函数名
 A1=$(whoami)
 B2="$A1.serv00.net"
 C3=3000
@@ -9,11 +7,7 @@ E5="$D4/$B2"
 F6="$E5/public_nodejs"
 G7="$F6/app.js"
 H8="https://raw.githubusercontent.com/ryty1/sver00-save-me/refs/heads/main/app.js"
-
-# Base64 编码部分内容
-ENCODED_LOGIC="aWYgZGV2aWwgOnd3dyBkZWwgIiRDMiIgPi9kZXYvbnVsbCAyPiYxOyB0aGVuIGVjaG8gIlsgT0sgXSBkZWxldGVkLiI7IGVsc2UgZWNobyAiIGZhaWxlZCBkZWwgYXN1bS4iOyBmaQ==" # 编码片段
-
-# 随机函数名
+ENCODED_LOGIC="aWYgZGV2aWwgOnd3dyBkZWwgIiRDMiIgPi9kZXYvbnVsbCAyPiYxOyB0aGVuIGVjaG8gIlsgT0sgXSBkZWxldGVkLiI7IGVsc2UgZWNobyAiIGZhaWxlZCBkZWwgYXN1bS4iOyBmaQ==" 
 CHECK_USER() {
     if [[ -z "$A1" ]]; then
         echo "无法获取当前系统用户名，脚本退出。"
@@ -53,18 +47,13 @@ SET_PERMISSION() {
         exit 1
     fi
 }
-
-# 动态解码并执行逻辑
 DECODE_EXEC() {
     echo "$ENCODED_LOGIC" | base64 -d | bash
 }
-
-# 主逻辑流程
 CHECK_USER
 if [[ -d "$E5" ]]; then
     rm -rf "$E5"
 fi
-
 DECODE_EXEC
 ADD_DOMAIN
 if [[ ! -d "$F6" ]]; then
@@ -73,8 +62,6 @@ fi
 INSTALL_DEPS
 DOWNLOAD_SCRIPT
 SET_PERMISSION
-
-# 输出结果
 echo " 【 恭 喜 】： 网 页 保 活 一 键 部 署 已 完 成  "
 echo " ———————————————————————————————————————————————————————————— "
 echo " |**保活网页 https://$B2/info "
