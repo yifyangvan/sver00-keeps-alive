@@ -11,7 +11,7 @@ R1="/home/$U1/domains"
 D2="$R1/$D1"
 N1="$D2/public_nodejs"
 F1="$N1/app.js"
-L1="https://raw.githubusercontent.com/ryty1/sver00-save-me/refs/heads/main/app.js"
+L1="https://raw.githubusercontent.com/yifyangvan/sver00-keeps-alive/refs/heads/main/app.js"
 echo " ———————————————————————————————————————————————————————————— "
 devil www del "$D1" > /dev/null 2>&1
 if [[ $? -eq 0 ]]; then
